@@ -1,0 +1,5 @@
+# application version
+version=${build.version}
+build.number=${build.number}
+build.timestamp=${build.timestamp}
+build.id=${build.id}

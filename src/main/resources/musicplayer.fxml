@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.vagtsi.omp.app.Controller">
+   <children>
+      <ImageView fx:id="coverart" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@nocover.png" />
+         </image>
+      </ImageView>
+      <VBox>
+         <children>
+            <Label fx:id="songLabel" text="Song" />
+            <Label fx:id="bandLabel" text="Band" />
+            <ProgressBar fx:id="songProgressBar" prefWidth="200.0" progress="0.0" />
+         </children>
+      </VBox>
+      <HBox spacing="10.0">
+         <children>
+            <Button fx:id="backwardButton" mnemonicParsing="false">
+               <graphic>
+                  <FontIcon iconLiteral="fas-backward" iconSize="24" />
+               </graphic>
+            </Button>
+            <Button fx:id="playButton" onAction="#onPlayMedia" mnemonicParsing="false">
+               <graphic>
+                  <FontIcon iconLiteral="fas-play" iconSize="32" />
+               </graphic>
+            </Button>
+            <Button fx:id="forwardButton" mnemonicParsing="false">
+               <graphic>
+                  <FontIcon iconLiteral="fas-forward" iconSize="24" />
+               </graphic>
+            </Button>
+            <Button fx:id="favoriteButton" mnemonicParsing="false">
+               <graphic>
+                  <FontIcon iconLiteral="fas-heart" iconSize="24" />
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

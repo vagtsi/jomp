@@ -1,0 +1,31 @@
+<configuration>
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
+			by default -->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread{20}] %-5level %logger{46} | %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="CYCLIC" class="ch.qos.logback.core.read.CyclicBufferAppender">
+<!-- 		 <layout class="ch.qos.logback.access.PatternLayout"> -->
+<!-- 			<pattern>%d{HH:mm:ss.SSS} [%thread{20}] %-5level %logger{46} | %msg%n</pattern> -->
+<!-- 		</layout> -->
+		<MaxSize>512</MaxSize>
+	</appender>
+
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="CYCLIC" />		
+	</root>
+
+	<logger name="org.apache.commons.beanutils.converters" level="INFO" />
+	<logger name="org.springframework" level="INFO" />
+	<logger name="org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener" level="INFO" />
+	<logger name="jcifs.smb" level="INFO" />
+	<logger name="jcifs.internal" level="INFO" />
+	<logger name="org.apache.http.wire" level="INFO" />
+
+</configuration>
